@@ -51,7 +51,6 @@ python-dateutil
 python-multipart
 pyunormalize
 PyWavelets
-pywin32
 qrcode
 regex
 reportlab
