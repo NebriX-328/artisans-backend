@@ -3,6 +3,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('ai_api/', include('ai_api.urls')),
+    path("ai/", include("ai_service")),
     path("", include("marketplace.urls")),  # ✅ this loads marketplace urls
 ]
+
