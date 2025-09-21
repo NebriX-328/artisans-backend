@@ -75,3 +75,4 @@ uvicorn
 web3
 websockets
 yarl
+psycopg2-binary
