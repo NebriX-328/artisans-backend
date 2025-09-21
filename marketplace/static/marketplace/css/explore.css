@@ -1,0 +1,486 @@
+/* =====================================
+ *
+ * ArtisansHub: Explore Page Styles - Orange/Red/Black/White Theme
+ *
+ * ===================================== */
+
+/* --- Global & Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #1F1F1F;
+}
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #1F1F1F; /* black */
+  color: #ffffff; /* orange-red */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #c10303;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 1.5rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #FF8C00; /* darker orange hover */
+}
+
+/* --- Search Bar --- */
+.search-bar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 2rem;
+}
+
+.search-bar form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.search-bar input:focus {
+  border-color: #e0dede;
+  box-shadow: 0 0 5px rgba(255,69,0,0.4);
+}
+
+.search-bar button {
+  padding: 0.5rem 0.9rem;
+  border: none;
+  background: #FF4500;
+  color: #fff;
+  font-size: 0.9rem;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-bar button:hover {
+  background: #FF8C00;
+}
+
+/* --- Hamburger Menu --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 4px;
+  transition: all 0.3s;
+}
+
+/* --- Hero Section --- */
+.hero {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+              url('https://picsum.photos/1200/400?art') no-repeat center/cover;
+  color: #fff;
+  border-bottom: 5px solid #ffffff;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+/* --- Description --- */
+.description {
+  padding: 2rem;
+  text-align: center;
+  background: #fff;
+}
+
+.description h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #FF4500;
+}
+
+
+/* --- Artist Cards --- */
+.artist-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(255,69,0,0.3);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* --- Stories Section --- */
+.artisan-stories {
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.story-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(255,69,0,0.25);
+}
+
+.story-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.story-card .card-content {
+  padding: 1.5rem;
+}
+
+.story-card .card-content span {
+  font-size: 0.8rem;
+  color: #FF4500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.story-card .card-content h3 {
+  font-size: 1.2rem;
+  color: #1F1F1F;
+  margin-bottom: 1rem;
+}
+
+.story-card .card-content p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* --- Featured Artists --- */
+.featured-artists {
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+}
+
+.artist-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(255,69,0,0.25);
+}
+
+.artist-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.artist-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #FF4500;
+}
+
+.artist-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* --- Events Section --- */
+.events-section {
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.event-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(255,69,0,0.25);
+}
+
+.event-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.event-card .event-content {
+  padding: 1.5rem;
+}
+
+.event-card .event-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #FF4500;
+}
+
+.event-card .event-content p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* --- Footer --- */
+footer {
+  background: #1F1F1F;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #1F1F1F;
+    width: 200px;
+    padding: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* =====================================
+ *
+ * ArtisansHub: AI Explore Section Enhancements
+ *
+ * ===================================== */
+
+/* --- Hero Section Specifics for Explore Page --- */
+.explore-hero {
+    position: relative;
+    height: 400px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-text-light); /* Assuming dark background for hero image */
+    background-size: cover;
+    background-position: center;
+    padding: var(--sp6x) 0;
+}
+
+.explore-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
+    z-index: 1;
+}
+
+.explore-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--sp4x);
+}
+
+.explore-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: var(--sp3x);
+    color: var(--color-text-light);
+}
+
+.explore-hero p {
+    font-size: 1.25rem;
+    margin-bottom: var(--sp5x);
+    color: var(--color-text-light);
+    line-height: 1.4;
+}
+
+/* --- AI Box (Query Input) within Hero --- */
+.explore-hero .ai-box {
+    display: flex;
+    flex-direction: row; /* Align textarea and button horizontally */
+    align-items: center;
+    gap: var(--sp3x);
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    border-radius: 12px;
+    padding: var(--sp2x);
+    box-shadow: var(--shadow-deep);
+    max-width: 700px; /* Limit width of the AI box */
+    margin: 0 auto; /* Center the AI box */
+}
+
+.explore-hero .ai-box textarea {
+    flex-grow: 1; /* Allow textarea to take available space */
+    min-height: 50px; /* Make it a single-line input visually */
+    max-height: 100px; /* Prevent it from getting too tall */
+    padding: var(--sp2x) var(--sp3x);
+    border: none; /* Remove default textarea border */
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: transparent; /* Match parent background */
+    color: var(--color-text-dark);
+    resize: none; /* Disable manual resizing by user */
+}
+
+.explore-hero .ai-box textarea::placeholder {
+    color: #888;
+}
+
+.explore-hero .ai-box textarea:focus {
+    outline: none;
+    box-shadow: none; /* Remove focus shadow as it's within a styled box */
+}
+
+.explore-hero .ai-box .btn-primary {
+    padding: var(--sp2x) var(--sp4x);
+    border-radius: 8px;
+    font-size: 1rem;
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+/* --- Responsive Adjustments for AI Explore Section --- */
+@media (max-width: 768px) {
+    .explore-hero {
+        height: 350px;
+    }
+
+    .explore-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .explore-hero p {
+        font-size: 1rem;
+        margin-bottom: var(--sp4x);
+    }
+
+    .explore-hero .ai-box {
+        flex-direction: column; /* Stack textarea and button on smaller screens */
+        padding: var(--sp3x);
+        gap: var(--sp2x);
+    }
+
+    .explore-hero .ai-box textarea {
+        min-height: 80px; /* Allow more text on mobile if needed */
+        width: 100%;
+        margin-bottom: var(--sp2x);
+    }
+
+    .explore-hero .ai-box .btn-primary {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .explore-hero h1 {
+        font-size: 2rem;
+    }
+}

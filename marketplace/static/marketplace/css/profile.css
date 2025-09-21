@@ -1,0 +1,547 @@
+/* =====================================
+ *
+ * ArtisansHub Dashboard Styles
+ *
+ * ===================================== */
+
+/*
+ * =====================================
+ * 1. Global & Utility Styles
+ * =====================================
+*/
+
+/* --- CSS Variables --- */
+:root {
+    --color-primary: #cb0808;
+    --color-secondary: #bd7318;
+    --color-accent: #5f5a63;
+    --color-text-dark: #1c1c1c;
+    --color-text-light: #FAFAFA;
+    --color-bg-light: #FDF9F5;
+    --color-bg-dark: #abaaaa;
+    --color-border: #41403f;
+
+    /* Spacing */
+    --sp1x: 0.25rem;
+    --sp2x: 0.5rem;
+    --sp3x: 1rem;
+    --sp4x: 1.5rem;
+    --sp5x: 2rem;
+    --sp6x: 3rem;
+
+    /* Shadows & Transitions */
+    --shadow-light: 0 5px 15px rgba(67, 65, 65, 0.08);
+    --shadow-deep: 0 10px 30px rgba(0,0,0,0.15);
+    --transition-speed: 0.4s;
+
+    /* Dashboard Specific */
+    --dashboard-bg: #f8f9fa;
+    --dashboard-card-bg: #222;
+    --dashboard-sidebar-bg: #FFFFFF;
+    --dashboard-border-color: #E6E8EB;
+    --dashboard-header-height: 80px;
+    --dashboard-sidebar-width: 88px;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dashboard-bg);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Main App Container */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Main Content Wrapper */
+.app-content {
+    display: flex;
+    flex-grow: 1;
+}
+
+/*
+ * =====================================
+ * 2. Dashboard Header
+ * =====================================
+*/
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--sp4x);
+    height: var(--dashboard-header-height);
+    background-color: var(--dashboard-card-bg);
+    box-shadow: var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.app-header-left, .app-header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--sp3x);
+}
+
+.app-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+.search-input {
+    padding: var(--sp2x) var(--sp4x);
+    border: 1px solid var(--dashboard-border-color);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    width: 250px;
+    transition: all var(--transition-speed) ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.search-wrapper svg {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.mode-switch, .add-btn, .notification-btn, .messages-btn, .project-btn-more {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--sp2x);
+    border-radius: 8px;
+    transition: all var(--transition-speed) ease;
+}
+
+.mode-switch:hover, .add-btn:hover, .notification-btn:hover, .messages-btn:hover {
+    background-color: #F0F2F5;
+}
+
+.profile-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--sp2x);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-btn img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-btn span {
+    font-weight: 500;
+}
+
+/*
+ * =====================================
+ * 3. Sidebar Navigation
+ * =====================================
+*/
+.app-sidebar {
+    width: var(--dashboard-sidebar-width);
+    background-color: var(--dashboard-sidebar-bg);
+    border-right: 1px solid var(--dashboard-border-color);
+    padding: var(--sp6x) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp5x);
+}
+
+.app-sidebar-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    color: #999;
+    transition: all var(--transition-speed) ease;
+}
+
+.app-sidebar-link:hover {
+    background-color: #F0F2F5;
+    color: var(--color-primary);
+}
+
+.app-sidebar-link.active {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    box-shadow: 0 4px 10px rgba(166, 93, 57, 0.25);
+    transform: scale(1.05);
+}
+
+/*
+ * =====================================
+ * 4. Main Content Sections
+ * =====================================
+*/
+.projects-section {
+    flex-grow: 1;
+    padding: var(--sp5x);
+}
+
+.projects-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--sp4x);
+}
+
+.projects-section-header p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.projects-section-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--sp4x);
+    margin-bottom: var(--sp5x);
+}
+
+/* Stats Cards */
+.projects-status {
+    display: flex;
+    gap: var(--sp4x);
+    flex-wrap: wrap;
+}
+
+.item-status {
+    text-align: center;
+}
+
+.status-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.status-type {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+/* View Actions */
+.view-actions {
+    display: flex;
+    gap: var(--sp2x);
+}
+
+.view-btn {
+    background-color: #F0F2F5;
+    border: none;
+    padding: var(--sp2x);
+    border-radius: 8px;
+    cursor: pointer;
+    color: #999;
+}
+
+.view-btn.active {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+/* Product/Project Cards */
+.project-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--sp4x);
+}
+
+.project-box-wrapper {
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.project-box-wrapper:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-deep);
+}
+
+.project-box {
+    padding: var(--sp4x);
+    border-radius: 12px;
+    background-color: var(--dashboard-card-bg);
+}
+
+.project-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--sp4x);
+}
+
+.project-box-header span {
+    color: #999;
+    font-size: 0.85rem;
+}
+
+.project-btn-more {
+    color: #999;
+}
+
+.project-box-content-header {
+    margin-bottom: var(--sp2x);
+}
+
+.box-content-header {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.box-content-subheader {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+/* Progress Bar */
+.box-progress-wrapper {
+    margin-top: var(--sp4x);
+}
+
+.box-progress-header {
+    font-size: 0.9rem;
+    margin-bottom: var(--sp1x);
+}
+
+.box-progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #E6E8EB;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.box-progress {
+    display: block;
+    height: 100%;
+    border-radius: 4px;
+    transition: width var(--transition-speed) ease;
+}
+
+.box-progress-percentage {
+    text-align: right;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: var(--sp1x);
+}
+
+.project-box-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--sp5x);
+}
+
+.participants {
+    display: flex;
+    align-items: center;
+    gap: -8px;
+}
+
+.participants img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--dashboard-card-bg);
+}
+
+.add-participant {
+    background-color: #F0F2F5;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--dashboard-card-bg);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.add-participant:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+.days-left {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/*
+ * =====================================
+ * 5. Messages Section
+ * =====================================
+*/
+.messages-section {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 380px;
+    height: 100%;
+    background-color: var(--dashboard-card-bg);
+    border-left: 1px solid var(--dashboard-border-color);
+    padding: var(--sp4x);
+    transform: translateX(100%);
+    transition: transform var(--transition-speed) ease;
+    z-index: 998;
+}
+
+.messages-section.show {
+    transform: translateX(0);
+}
+
+.messages-close {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.messages-close svg {
+    color: var(--color-text-dark);
+}
+
+.messages-section .projects-section-header {
+    justify-content: center;
+    margin-bottom: var(--sp5x);
+}
+
+.message-box {
+    display: flex;
+    gap: var(--sp3x);
+    padding: var(--sp3x);
+    border-bottom: 1px solid var(--dashboard-border-color);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.message-box:hover {
+    background-color: #F0F2F5;
+}
+
+.message-box img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: var(--sp1x);
+}
+
+.name {
+    font-size: 1rem;
+}
+
+.star-checkbox input {
+    display: none;
+}
+
+.star-checkbox svg {
+    cursor: pointer;
+    color: #999;
+}
+
+.star-checkbox input:checked + label svg {
+    fill: var(--color-secondary);
+    stroke: var(--color-secondary);
+}
+
+.message-line {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.message-line.time {
+    font-size: 0.8rem;
+    text-align: right;
+    color: #999;
+}
+
+/*
+ * =====================================
+ * 6. Responsive Design
+ * =====================================
+*/
+@media (max-width: 1024px) {
+    .app-header {
+        flex-wrap: wrap;
+        height: auto;
+        padding-bottom: var(--sp3x);
+        gap: var(--sp3x);
+    }
+    .app-header-left, .app-header-right {
+        gap: var(--sp2x);
+    }
+    .profile-btn span {
+        display: none;
+    }
+    .app-sidebar {
+        display: none; /* Hide sidebar on smaller screens */
+    }
+    .projects-section {
+        padding: var(--sp4x);
+    }
+    .projects-section-line {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--sp2x);
+    }
+    .messages-btn {
+        display: block;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .app-header {
+        padding: var(--sp3x);
+    }
+    .app-header-left, .app-header-right {
+        flex-grow: 1;
+        justify-content: space-between;
+        gap: var(--sp2x);
+    }
+    .search-input {
+        width: 150px;
+    }
+    .messages-section {
+        width: 100%;
+        border-left: none;
+    }
+}
