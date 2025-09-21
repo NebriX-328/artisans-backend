@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Marketplace - Home</title>
+    <link rel="stylesheet" href="{% static 'marketplace/css/styles.css' %}">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Artisan</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="{% url 'index' %}">Home</a></li>
+       <li><a href="{% url 'marketplace' %}">Marketplace</a></li>
+        <li><a href="{% url 'awards' %}">Awards</a></li>
+         <li><a href="{% url 'explore' %}">Explore</a></li>
+        
+    
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+
+    <main>
+        <section class="hero text-center competitions-hero">
+            <div class="hero-content">
+                <h1>🏆 Competitions</h1>
+                <p>Showcase your talent and win exciting awards by participating in upcoming events.</p>
+            </div>
+        </section>
+
+
+        <section class="competitions">
+  <h2>Upcoming Competitions</h2>
+  <div class="competition-grid">
+
+    <!-- Competition Card -->
+    <div class="competition-card">
+                 <img src="{% static 'marketplace/images/paint comp.png' %}"  alt="Painting Competition">
+      <h3>National Folk Painting Contest</h3>
+      <p>Showcase your Madhubani, Warli, or Pattachitra art. Winners get featured on our homepage.</p>
+      <p><strong>Date:</strong> 20 Sept 2025</p>
+      <button class="join-btn">Join Now</button>
+    </div>
+
+    <div class="competition-card">
+     <img src="{% static 'marketplace/images/sculp comp.png' %}"  alt="Sculpture Competition">
+      <h3>Wood & Stone Sculpture Challenge</h3>
+      <p>Artists from across India will compete in hand-carving excellence.</p>
+      <p><strong>Date:</strong> 10 Oct 2025</p>
+      <button class="join-btn">Join Now</button>
+    </div>
+
+    <div class="competition-card">
+      <img src="{% static 'marketplace/images/handloom comp.png' %}" alt="Handloom Weaving">
+      <h3>Handloom Weaving Mastery</h3>
+      <p>Celebrate traditional weaving techniques and get global recognition.</p>
+      <p><strong>Date:</strong> 25 Oct 2025</p>
+      <button class="join-btn">Join Now</button>
+    </div>
+
+    <div class="competition-card">
+     <img src="{% static 'marketplace/images/digital age cmp.png'%}" alt="Digital Fusion Art">
+      <h3>Digital Fusion of Tradition</h3>
+      <p>Blend traditional Indian art with modern digital tools.</p>
+      <p><strong>Date:</strong> 5 Nov 2025</p>
+      <button class="join-btn">Join Now</button>
+    </div>
+
+  </div>
+</section>
+
+
+    <footer class="footer">
+        <p>&copy; 2025 ArtisansHub. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Marketplace - Home</title>
+    <link rel="stylesheet" href="{% static 'marketplace/css/styles.css' %}">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Artisan</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'marketplace' %}">Marketplace</a></li>
+        <li><a href="{% url 'competitions' %}">Competitions</a></li>
+         <li><a href="{% url 'explore' %}">Explore</a></li>
+    
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Recognitions & Awards</h1>
+    
+  </section>
+
+
+<section class="awards">
+  
+  <div class="awards-grid">
+
+    <!-- Award Card -->
+    <div class="award-card">
+      <img src="{% static 'marketplace/images/best artisan madhu.png' %}" alt="Best Artisan Award">
+      <h3>Best Artisan 2024</h3>
+      <p>Awarded for excellence in traditional Madhubani painting.</p>
+    </div>
+
+    <div class="award-card">
+      <img src="{% static 'marketplace/images/global craft.png' %}" alt="Global Craft Competition">
+      <h3>Global Craft Competition</h3>
+      <p>Secured 1st place for wood-carved sculptures.</p>
+    </div>
+
+    <div class="award-card">
+      <img src="{% static 'marketplace/images/culture.png' %}" alt="Cultural Heritage Award">
+      <h3>Cultural Heritage Award</h3>
+      <p>Recognized for preserving India’s handloom weaving tradition.</p>
+    </div>
+
+    <div class="award-card">
+       <img src="{% static 'marketplace/images/innovation.png' %}"  alt="Innovation in Art">
+      <h3>Innovation in Art</h3>
+      <p>Honored for blending traditional art with modern techniques.</p>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Artisan Marketplace. All rights reserved.</p>
+  </footer>

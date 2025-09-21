@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Marketplace - Home</title>
+    <link rel="stylesheet" href="{% static 'marketplace/css/explore.css' %}">
+</head>
+<body>
+
+    <div class="main-wrapper">
+
+        <header class="navbar">
+            <div class="logo">Artisans<span>Hub</span></div>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'marketplace' %}">Marketplace</a></li>
+                    <li><a href="{% url 'awards' %}">Awards</a></li>
+                    <li><a href="{% url 'competitions' %}">Competitions</a></li>
+                  
+                </ul>
+                <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+   <!-- Hero Section -->
+  <section class="hero">
+    <h1>Explore with AI</h1>
+    <p>Discover unique art, find traditional workshops, and connect with artisans that match your taste.</p>
+  </section>
+
+
+        <main>
+                <div class="ai-box">
+                    <textarea id="ai-query" placeholder="Ask AI: 'Show me traditional pottery,' 'Find abstract artists in my area,' or 'Tell me about Madhubani painting'..."></textarea>
+                    <button id="ai-submit" class="btn btn-primary">
+                        <i class="fas fa-magic"></i> Explore
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="artisan-stories py-sp6x">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Artisan Stories</h2>
+                    <a href="#" class="view-all-link">View all →</a>
+                </div>
+                <div class="stories-grid">
+                    <div class="story-card">
+                        <img src="{% static 'marketplace/images/clay.png'%}"alt="Story image">
+                        <div class="card-content">
+                            <span>Dec 27</span>
+                            <h3>The Art of Clay</h3>
+                            <p>Discover how traditional potters are keeping their craft alive in the digital age.</p>
+                            <a href="#">By Artisan A</a>
+                        </div>
+                    </div>
+                    <div class="story-card">
+                       <img src="{% static 'marketplace/images/weaving .jpg'%}" alt="Story image">
+                        <div class="card-content">
+                            <span>Dec 29</span>
+                            <h3>Weaving the Future</h3>
+                            <p>Meet the textile artisans who are blending modern design with ancient weaving techniques.</p>
+                            <a href="#">By Artisan B</a>
+                        </div>
+                    </div>
+                    <div class="story-card">
+                       <img src="{% static 'marketplace/images/painting.jpg'%}" alt="Story image">
+                        <div class="card-content">
+                            <span>Dec 29</span>
+                            <h3>Beyond the Brush</h3>
+                            <p>Learn about the unique painting styles from across India and the stories behind them.</p>
+                            <a href="#">By Artisan C</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="featured-artists py-sp6x">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Artists</h2>
+                </div>
+                <div class="artists-grid">
+                    <div class="artist-card text-center">
+                        <img src="https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Artist photo">
+                        <h3>Sunita Rao</h3>
+                        <p>Painter & Sculptor</p>
+                    </div>
+                    <div class="artist-card text-center">
+                        <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="Artist photo">
+                        <h3>Rohan Sharma</h3>
+                        <p>Textile Artisan</p>
+                    </div>
+                    <div class="artist-card text-center">
+                        <img src="https://images.unsplash.com/photo-1583195764036-6dc248ac07d9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2555&q=80" alt="Artist photo">
+                        <h3>Fatima Khan</h3>
+                        <p>Ceramic Artist</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="events-section py-sp6x">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Upcoming Events & Workshops</h2>
+                    <a href="#" class="view-all-link">See all →</a>
+                </div>
+                <div class="event-grid">
+                    <div class="event-card">
+                        <img src="{% static 'marketplace/images/comp.jpg'%}" alt="Event Image">
+                        <div class="event-content">
+                            <h3>National Art Competition 2025</h3>
+                            <p>Submit your best artwork for a chance to win cash prizes and recognition.</p>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <img src="{% static 'marketplace/images/pottery2.jpg'%}" alt="Workshop Image">
+                        <div class="event-content">
+                            <h3>Beginner's Pottery Workshop</h3>
+                            <p>Learn the basics of hand-building and throwing clay with an expert artisan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Artisan Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'marketplace/js/explore.js' %}"></script>
+
+</body>
+</html>

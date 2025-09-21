@@ -1,1 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Marketplace - Home</title>
+    <link rel="stylesheet" href="{% static 'marketplace/css/styles.css' %}">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Artisan</div>
+      <ul class="nav-links" id="nav-links">
+         <li><a href="{% url 'marketplace' %}">Marketplace</a></li>
+        <li><a href="{% url 'awards' %}">Awards</a></li>
+        <li><a href="{% url 'competitions' %}">Competitions</a></li>
+         <li><a href="{% url 'explore' %}">Explore</a></li>
+        <li><a href="{% url 'login' %}" id="login-link">Login</a></li>
+          <li><a href="{% url 'profile1' %}"  id="profile-link">Profile</a><li>
+    
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
 
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Artisan Marketplace</h1>
+    <p>Discover traditional crafts, meet artisans, and explore their stories.</p>
+  </section>
+
+  <!-- Marketplace Description -->
+  <section class="description">
+    <h2>We Encourage every Artist and their Art</h2>
+    <p>
+      Our platform connects local artisans with global audiences. Each piece carries
+      a story, a tradition, and a soul. Explore, support, and celebrate the heritage of crafts.
+    </p>
+  </section>
+
+  <!-- Artist Cards -->
+  <section class="artist-cards">
+    <div class="card">
+     <img src="{% static 'marketplace/images/ravi.jpeg' %}" alt="Artist Work 1">
+      <h3>Ravi Kumar</h3>
+      <p>Wood carving artist from Mysuru. Keeping centuries-old traditions alive.</p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/300/200?2" alt="Artist Work 2">
+      <h3>Asha Devi</h3>
+      <p>Handloom weaver creating intricate sarees that tell cultural stories.</p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/300/200?3" alt="Artist Work 3">
+      <h3>Mohammed Ali</h3>
+      <p>Metal craftsman specializing in brass and copper artifacts.</p>
+    </div>
+
+
+  </section>
+
+  <!-- Chatbot Button + Popup -->
+<div class="chatbot-container">
+  <!-- Floating Button -->
+  <button id="chatbot-btn">💬</button>
+
+  <!-- Popup Card -->
+  <div id="chatbot-popup" class="chatbot-popup">
+    <div class="chatbot-header">
+      <h3>Artisan Chatbot</h3>
+      <span id="chatbot-close">&times;</span>
+    </div>
+    <div class="chatbot-body">
+      <p>Hello 👋, how can I help you today?</p>
+      <div id="chatbot-messages"></div>
+    </div>
+    <div class="chatbot-footer">
+      <input type="text" id="chatbot-input" placeholder="Type a message..." />
+      <button id="chatbot-send">➤</button>
+    </div>
+  </div>
+</div>
+
+<!-- Link JS -->
+<script src="{% static 'marketplace/js/chatbot.js' %}"></script>
+<link rel="stylesheet" href="{% static 'marketplace/css/styles.css' %}">
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Artisan Marketplace. All rights reserved.</p>
+  </footer>
+
+  <script src="{% static 'marketplace/js/auth.js' %}"></script>
+</body>
+</html>

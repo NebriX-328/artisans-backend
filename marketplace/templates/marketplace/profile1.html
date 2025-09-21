@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard | ArtisansHub</title>
+       <link rel="stylesheet" href="{% static 'marketplace/css/profile.css' %}">
+       <link rel="stylesheet" href="{% static 'marketplace/css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <div class="app-header">
+            <div class="app-header-left">
+                <p class="app-name">ArtisansHub</p>
+                <div class="search-wrapper">
+                    <input class="search-input" type="text" placeholder="Search for your art...">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-search" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="app-header-right">
+                <button class="add-btn" title="Add New Artwork">
+                    <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                </button>
+                <button class="notification-btn" title="Notifications">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                    </svg>
+                </button>
+                <button class="profile-btn">
+                    <img src="https://images.unsplash.com/photo-1543965170-4c01a586684e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDZ8fG1hbnxlbnwwfDB8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="profile image">
+                    <span>Artist Name</span>
+                </button>
+            </div>
+            <button class="messages-btn" title="Client Messages">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="app-content">
+            <div class="app-sidebar">
+                <a href="#" class="app-sidebar-link active" title="My Artworks">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        <polyline points="9 22 9 12 15 12 15 22" />
+                    </svg>
+                </a>
+                <a href="#" class="app-sidebar-link" title="Competitions">
+                    <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-pie-chart" viewBox="0 0 24 24">
+                        <path d="M21.21 15.89A10 10 0 118 2.83M22 12A10 10 0 0012 2v10z" />
+                    </svg>
+                </a>
+                <a href="#" class="app-sidebar-link" title="Awards">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award">
+                        <circle cx="12" cy="8" r="7" />
+                        <polyline points="8.21 13.89 7 23 12 17 17 23 15.79 13.89" />
+                    </svg>
+                </a>
+                <a href="#" class="app-sidebar-link" title="Profile Settings">
+                    <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-settings" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="projects-section">
+                <div class="projects-section-header">
+                    <p>My Artworks</p>
+                    <p class="time">September, 2025</p>
+                </div>
+                <div class="projects-section-line">
+                    <div class="projects-status">
+                        <div class="item-status">
+                            <span class="status-number">45</span>
+                            <span class="status-type">Total Artworks</span>
+                        </div>
+                        <div class="item-status">
+                            <span class="status-number">24</span>
+                            <span class="status-type">Awards Received</span>
+                        </div>
+                        <div class="item-status">
+                            <span class="status-number">62</span>
+                            <span class="status-type">Clients</span>
+                        </div>
+                    </div>
+                    <div class="view-actions">
+                        <button class="view-btn list-view" title="List View">
+                            <i class="fas fa-list"></i>
+                        </button>
+                        <button class="view-btn grid-view active" title="Grid View">
+                            <i class="fas fa-th"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-boxes jsGridView">
+                    <div class="project-box-wrapper">
+                        <div class="project-box" style="background-color: #fee4cb;">
+                            <div class="project-box-header">
+                                <span>Published: Sep 1, 2025</span>
+                                <div class="more-wrapper">
+                                    <button class="project-btn-more">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="12" cy="5" r="1" />
+                                            <circle cx="12" cy="19" r="1" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-box-content-header">
+                                <p class="box-content-header">Handmade Pottery</p>
+                                <p class="box-content-subheader">Clay & Glaze</p>
+                            </div>
+                            <div class="box-progress-wrapper">
+                                <p class="box-progress-header">Stock</p>
+                                <div class="box-progress-bar">
+                                    <span class="box-progress" style="width: 60%; background-color: #ff942e"></span>
+                                </div>
+                                <p class="box-progress-percentage">6 items</p>
+                            </div>
+                            <div class="project-box-footer">
+                                <div class="participants">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile photo">
+                                    <span class="price-tag">₹4,500</span>
+                                </div>
+                                <div class="status-tag" style="color: #ff942e;">
+                                    In Stock
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-box-wrapper">
+                        <div class="project-box" style="background-color: #e9e7fd;">
+                            <div class="project-box-header">
+                                <span>Published: Aug 28, 2025</span>
+                                <div class="more-wrapper">
+                                    <button class="project-btn-more">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="12" cy="5" r="1" />
+                                            <circle cx="12" cy="19" r="1" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-box-content-header">
+                                <p class="box-content-header">Oil Painting</p>
+                                <p class="box-content-subheader">Abstract</p>
+                            </div>
+                            <div class="box-progress-wrapper">
+                                <p class="box-progress-header">Stock</p>
+                                <div class="box-progress-bar">
+                                    <span class="box-progress" style="width: 10%; background-color: #4f3ff0"></span>
+                                </div>
+                                <p class="box-progress-percentage">1 item</p>
+                            </div>
+                            <div class="project-box-footer">
+                                <div class="participants">
+                                    <img src="https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1215&q=80" alt="profile photo">
+                                    <span class="price-tag">₹8,900</span>
+                                </div>
+                                <div class="status-tag" style="color: #4f3ff0;">
+                                    Low Stock
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="messages-section">
+            <button class="messages-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="15" y1="9" x2="9" y2="15" />
+                    <line x1="9" y1="9" x2="15" y2="15" />
+                </svg>
+            </button>
+            <div class="projects-section-header">
+                <p>Client Messages</p>
+            </div>
+            <div class="messages">
+                <div class="message-box">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
+                    <div class="message-content">
+                        <div class="message-header">
+                            <div class="name">Stephanie</div>
+                            <div class="star-checkbox">
+                                <input type="checkbox" id="star-1">
+                                <label for="star-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg>
+                                </label>
+                            </div>
+                        </div>
+                        <p class="message-line">Interested in your new sculpture.</p>
+                        <p class="message-line time">Dec, 12</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Simple JS for the messages button to open/close the sidebar
+        const messagesBtn = document.querySelector('.messages-btn');
+        const messagesSection = document.querySelector('.messages-section');
+        const messagesCloseBtn = document.querySelector('.messages-close');
+
+        messagesBtn.addEventListener('click', () => {
+            messagesSection.classList.add('show');
+        });
+
+        messagesCloseBtn.addEventListener('click', () => {
+            messagesSection.classList.remove('show');
+        });
+    </script>
+    <script src="{% static 'marketplace/js/profile.js' %}"></script>
+</body>
+</html>

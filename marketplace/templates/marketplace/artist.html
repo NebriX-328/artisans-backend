@@ -1,0 +1,166 @@
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist Story - ArtisansHub</title>
+<link rel="stylesheet" href="{% static 'marketplace/css/styles.css' %}">
+ <script src="{% static 'marketplace/js/auth.js' %}"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Artisan</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="{% url 'index' %}">Home</a></li>
+         <li><a href="{% url 'marketplace' %}">Marketplace</a></li>
+        <li><a href="{% url 'awards' %}">Awards</a></li>
+        <li><a href="{% url 'competitions' %}">Competitions</a></li>
+         <li><a href="{% url 'explore' %}">Explore</a></li>
+        
+
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <style>
+    /* Page Specific Styling */
+    .artist-container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .artist-header {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .artist-header img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #f0f0f0;
+    }
+
+    .artist-info h2 {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .artist-info p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .artist-story {
+      margin: 2rem 0;
+    }
+
+    .artist-story h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    .artist-story p {
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .art-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .art-gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .art-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background: #ff9900;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #e68900;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Artist Story Section -->
+  <section class="artist-container">
+    <div class="artist-header">
+      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="Artist Photo">
+      <div class="artist-info">
+        <h2>Ravi Sharma</h2>
+        <p><strong>Tradition:</strong> Madhubani Painting</p>
+        <p><strong>Region:</strong> Bihar, India</p>
+      </div>
+    </div>
+
+    <div class="artist-story">
+      <h3>About the Artist</h3>
+      <p>
+        Ravi Sharma is a third-generation Madhubani artist whose works reflect the deep cultural heritage of Bihar. 
+        He learned the intricate techniques from his grandmother and has carried forward the tradition with 
+        contemporary touches that resonate with global audiences. Ravi’s journey is not only about preserving art 
+        but also about sharing stories of resilience, identity, and creativity.
+      </p>
+    </div>
+
+    <div class="artist-story">
+      <h3>The Story Behind the Art</h3>
+      <p>
+        Each of Ravi’s paintings is inspired by folk tales, mythology, and the environment around him. 
+        His art often uses natural dyes and handmade paper, keeping the craft sustainable. His recent 
+        works focus on themes of climate change and harmony between nature and humans.
+      </p>
+    </div>
+
+    <div class="art-gallery">
+      <img src="https://images.unsplash.com/photo-1549887534-4b4d00b1a02b" alt="Artwork 1">
+      <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97" alt="Artwork 2">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Artwork 3">
+    </div>
+
+    <a href="{% url 'marketplace' %}" class="back-btn">← Back to Marketplace</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ArtisansHub. All rights reserved.</p>
+  </footer>
+</body>
+</html>

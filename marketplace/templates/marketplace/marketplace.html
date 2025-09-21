@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+    <link rel="stylesheet" href="{% static 'marketplace/css/styles.css' %}">
+</head>
+</html>
+
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Artisan</div>
+      <!-- Search bar-->
+  <div class="search-bar">
+      <form>
+        <input type="text" placeholder="Search...">
+        <button type="submit">🔍</button>
+      </form>
+    </div>
+
+      <ul class="nav-links" id="nav-links">
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'awards' %}">Awards</a></li>
+        <li><a href="{% url 'competitions' %}">Competitions</a></li>
+         <li><a href="{% url 'explore' %}">Explore</a></li>
+        <li><a href="{% url 'login' %}" id="login-link">Login</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <section class="hero">
+      <h1>Welcome to Artisan Marketplace</h1>
+      <p>Discover unique handmade crafts from skilled artisans.</p>
+    </section>
+
+  <!-- Marketplace -->
+  <section class="marketplace">
+    <h2>Discover Unique Handmade Creations</h2>
+  <div class="product-grid">
+    
+    <!-- Product Card -->
+    <div class="product-card">
+      <img src="{% static 'marketplace/images/pot1.jpeg' %}" alt="Handmade Pottery">
+      <h3>Handmade Pottery Vase</h3>
+      <p class="price">₹1,200</p>
+      <p class="artist">By: Aditi Sharma</p>
+      <button onclick=location.href="{% url 'artist' %}">Art & Artist Story</button>
+      <button onclick=location.href="{% url 'payment' %}">Buy Now</button>
+      <button class="cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="{% static 'marketplace/images/madhubani-img1.png' %}" alt="Madhubani Painting" >
+
+      <h3>Madhubani Folk Painting</h3>
+      <p class="price">₹3,500</p>
+      <p class="artist">By: Rajeev Kumar</p>
+      <button onclick=location.href="{% url 'artist' %}">Art & Artist Story</button>
+      <button onclick=location.href="{% url 'payment' %}">Buy Now</button>
+      <button class="cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="{% static 'marketplace/images/handwoven shawl img2.jpeg' %}" alt="Shawl" >
+
+      <h3>Handwoven Woolen Shawl</h3>
+      <p class="price">₹2,000</p>
+      <p class="artist">By: Meera Devi</p>
+      <button onclick=location.href="{% url 'artist' %}">Art & Artist Story</button>
+      <button onclick=location.href="{% url 'payment' %}">Buy Now</button>
+      <button class="cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="{% static 'marketplace/images/woodimg4.jpeg' %}" alt="Wooden Sculpture">
+      <h3>Intricate Wooden Sculpture</h3>
+      <p class="price">₹4,800</p>
+      <p class="artist">By: Ravi Verma</p>
+      <button onclick=location.href="{% url 'artist' %}">Art & Artist Story</button>
+      <button onclick=location.href="{% url 'payment' %}">Buy Now</button>
+      <button class="cart-btn">Add to Cart</button>
+    </div>
+
+    <h1>Available Artworks</h1>
+<ul>
+    {% for art in artworks %}
+        <li>{{ art.title }} - ${{ art.price }} by {{ art.artisan.name }}</li>
+    {% endfor %}
+</ul>
+
+    
+  </div>
+</section>
+
+
+  <footer>
+    <p>&copy; 2025 ArtisansHub. All rights reserved.</p>
+  </footer>
+
+  <script src="js/marketplace.js"></script>
+</body>
+</html>
